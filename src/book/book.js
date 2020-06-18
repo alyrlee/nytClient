@@ -1,9 +1,9 @@
 import React from 'react';
 import './book.css';
 import moment from 'moment';
+
 export default function Book(props) {
     return (
-        
         <div className="book">
         <h2>{ props. title }</h2> 
         <div className="book_author"> by { props.author } </div>
@@ -15,7 +15,7 @@ export default function Book(props) {
         <div className="book_details">
             Rank {props.rank} this week
         </div>
-
             </div>
     )
 }
+

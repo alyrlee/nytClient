@@ -30,10 +30,10 @@ class App extends Component {
     e.preventDefault();
     const baseUrl = 'http://localhost:8000/books';
     const params = [];
-    if (this.state.search) {
+    if(this.state.search) {
       params.push(`search=${this.state.search}`);
     }
-    if (this.state.sort) {
+    if(this.state.sort) {
       params.push(`sort=${this.state.sort}`);
     }
     const query = params.join('&');
@@ -41,7 +41,7 @@ class App extends Component {
 
     fetch(url)
       .then(res => {
-        if (!res.ok) {
+        if(!res.ok) {
           throw new Error(res.statusText);
         }
         return res.json();
@@ -70,10 +70,10 @@ class App extends Component {
         <div className="search">
           <form onSubmit={e => this.handleSubmit(e)}>
             <label htmlFor="search">Search: </label>
-            <input
-              type="text"
-              id="search"
-              name="search"
+            <input 
+              type="text" 
+              id="search" 
+              name="search" 
               value={this.state.search}
               onChange={e => this.setSearch(e.target.value)}/>
 
@@ -82,8 +82,8 @@ class App extends Component {
               <option value="">None</option>
               <option value="title">Title</option>
               <option value="rank">Rank</option>
-            </select>
-            <button type="submit">Search</button>
+            </select>  
+            <button type="submit">Search</button>  
           </form>
           <div className="App_error">{ this.state.error }</div>
         </div>
