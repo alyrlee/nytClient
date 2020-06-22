@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Book from './book/book';
 
+
 class App extends Component {
 
   constructor(props) {
@@ -63,7 +64,7 @@ class App extends Component {
   render() {
     const books = this.state.books.map((book, i) => {
       return <Book {...book} key={i}/>
-    })
+    });
     return (
       <main className="App">
         <h1>NYT Best Sellers</h1>
